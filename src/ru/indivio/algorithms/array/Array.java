@@ -1,4 +1,4 @@
-package ru.indivio.algorithms;
+package ru.indivio.algorithms.array;
 
 public interface Array<E> {
 

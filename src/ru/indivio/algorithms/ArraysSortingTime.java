@@ -1,5 +1,8 @@
 package ru.indivio.algorithms;
 
+import ru.indivio.algorithms.array.Array;
+import ru.indivio.algorithms.array.ArrayImpl;
+
 import java.util.Random;
 
 public class ArraysSortingTime {

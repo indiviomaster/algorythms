@@ -1,4 +1,6 @@
-package ru.indivio.algorithms;
+package ru.indivio.algorithms.array;
+
+import ru.indivio.algorithms.exceptions.MyCustomArrayIndexOutOfBoundsException;
 
 import java.util.Arrays;
 
