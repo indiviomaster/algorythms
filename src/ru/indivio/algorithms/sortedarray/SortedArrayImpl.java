@@ -1,4 +1,6 @@
-package ru.indivio.algorithms;
+package ru.indivio.algorithms.sortedarray;
+
+import ru.indivio.algorithms.array.ArrayImpl;
 
 public class SortedArrayImpl<E extends Comparable<? super E>> extends ArrayImpl<E> {
 

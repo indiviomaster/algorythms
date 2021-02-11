@@ -1,4 +1,4 @@
-package ru.indivio.algorithms;
+package ru.indivio.algorithms.exceptions;
 
 public class MyCustomArrayIndexOutOfBoundsException extends RuntimeException {
 
