@@ -1,6 +1,7 @@
 package ru.indivio.algorithms.list;
 
-import lesson3.stack.IStack;
+
+import ru.indivio.algorithms.stack.IStack;
 
 public class LinkedStackImpl<E> implements IStack<E> {
 
