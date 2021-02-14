@@ -28,6 +28,7 @@ public interface LinkedList<E> extends Iterable<E> {
             this.item = item;
             this.next = next;
         }
+
     }
 
 }

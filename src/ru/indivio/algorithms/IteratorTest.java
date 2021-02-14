@@ -45,10 +45,12 @@ public class IteratorTest {
         SimpleListIterator<String> iterator = (SimpleListIterator<String>) list.iterator();
         System.out.println(iterator.next()); //A
         iterator.next(); //B
+        iterator.insertAfter("After");
         System.out.println(iterator.next()); //C
         iterator.remove(); //D - удален
         System.out.println(iterator.next()); //Е
         iterator.remove();//F - удален
+        iterator.insertBefore("Before");
         iterator.reset();
         iterator.remove();//A - Удален
         System.out.println(iterator.next()); //B
