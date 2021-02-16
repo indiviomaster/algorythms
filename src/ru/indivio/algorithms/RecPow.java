@@ -2,7 +2,11 @@ package ru.indivio.algorithms;
 
 public class RecPow {
     public static void main(String[] args) {
-        System.out.println(pow(10.0,-10));
+        System.out.println(pow(10.0,2));
+        System.out.println(pow(2.0,-2));
+        System.out.println(pow(2.0,0));
+        System.out.println(pow(2.0,-1));
+        System.out.println(pow(2.0,1));
     }
     public static double pow(double number, int power){
         if(power == 0){
@@ -28,3 +32,4 @@ public class RecPow {
         return powNum(acc*n, n, p-1);
     }
 }
+
