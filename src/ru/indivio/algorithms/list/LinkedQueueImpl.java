@@ -1,6 +1,7 @@
 package ru.indivio.algorithms.list;
 
-import lesson3.queue.IQueue;
+
+import ru.indivio.algorithms.queue.IQueue;
 
 public class LinkedQueueImpl<E> implements IQueue<E> {
 

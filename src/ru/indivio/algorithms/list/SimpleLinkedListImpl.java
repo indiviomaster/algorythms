@@ -1,7 +1,7 @@
 package ru.indivio.algorithms.list;
 
+
 import java.util.Iterator;
-import java.util.Optional;
 
 public class SimpleLinkedListImpl<E> implements LinkedList<E> {
 
@@ -102,6 +102,6 @@ public class SimpleLinkedListImpl<E> implements LinkedList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new SimpleListIterator<E>(this);
     }
 }
