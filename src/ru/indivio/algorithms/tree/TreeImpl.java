@@ -18,11 +18,13 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E> {
     private int size;
     private Node<E> root;
 
+    public Node<E> getRoot(){
+        return root;
+    }
 
     @Override
     public void add(E value) {
         Node<E> newNode = new Node<>(value);
-
         if (isEmpty()) {
             root = newNode;
             size++;
@@ -58,11 +60,13 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E> {
     private NodeAndParent doFind(E value) {
         Node<E> current = root;
         Node<E> previous = null;
+        int levelsCount = 0;
         while (current != null) {
-            if (current.getValue().equals(value)) {
+            if (current.getValue().equals(value)||levelsCount == 4) {
                 return new NodeAndParent(current, previous);
             }
             previous = current;
+            levelsCount++;
             if (current.isLeftChild(value)) {
                 current = current.getLeftChild();
             }
@@ -245,4 +249,17 @@ public class TreeImpl<E extends Comparable<? super E>> implements Tree<E> {
         }
         System.out.println("................................................................");
     }
+
+
+    public static boolean isBalanced(Node node) {
+        return (node == null) || isBalanced(node.getLeftChild()) && isBalanced(node.getRightChild()) && (Math.abs(height(node.getLeftChild()) - height(node.getRightChild())) <= 1);
+    }
+
+    private static int height(Node node) {
+        return node == null ? 0 : 1 + Math.max(height(node.getLeftChild()), height(node.getRightChild()));
+    }
+
+
+
+
 }

@@ -2,6 +2,8 @@ package ru.indivio.algorithms.tree;
 
 public interface Tree<E extends Comparable<? super E>> {
 
+    Node getRoot();
+
     enum TraverseMode {
         IN_ORDER,
         PRE_ORDER,
