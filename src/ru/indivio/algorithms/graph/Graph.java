@@ -112,9 +112,60 @@ public class Graph implements IGraph {
         resetVertexState();
     }
 
+
+    public String findWay(String startLabel,String stopLabel) {
+        int startIndex = indexOf(startLabel);
+        int stopIndex = indexOf(stopLabel);
+        if (startIndex == -1) {
+            throw new IllegalArgumentException("Invalid start label");
+        }
+        if (stopIndex == -1) {
+            throw new IllegalArgumentException("Invalid stop label");
+        }
+
+        Queue<Vertex> queue = new LinkedList<>(); //new ArrayDeque<>();
+        Vertex vertex = vertexList.get(startIndex);
+
+        visitVertex(queue, vertex);
+        while (!queue.isEmpty()) {
+            vertex = getNearUnvisitedVertex(queue.peek());
+            if (vertex != null) {
+                visitVertex(queue, vertex);
+                vertex.setPrevious(queue.peek());
+                if(vertex.getLabel().equals(stopLabel)){
+                    return pathToVertex(vertex);
+
+                }
+            } else {
+                queue.remove();
+            }
+        }
+        System.out.println("Путь не найден");
+        resetVertexState();
+        return null;
+    }
+
+    private String pathToVertex(Vertex vertex) {
+        StringBuilder stringBuilder = new StringBuilder();
+        Stack<String> stack =new Stack<>();
+        Vertex current = vertex;
+        while (current != null) {
+            stack.push(current.getLabel());
+            current = current.getPrevious();
+        }
+        while ( !stack.isEmpty() ) {
+            stringBuilder.append(stack.pop());
+            if(!stack.isEmpty()){
+                stringBuilder.append("->");
+            }
+        }
+        return stringBuilder.toString();
+    }
+
     private void resetVertexState() {
         for (Vertex vertex : vertexList) {
             vertex.setVisited(false);
+            vertex.setPrevious(null);
         }
     }
 
