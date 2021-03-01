@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 public class ArrayImpl<E extends Comparable<? super E>> implements Array<E> {
 
-    private static final int DEFAULT_CAPACITY = 8;
+    protected static final int DEFAULT_CAPACITY = 8;
 
     protected E[] data;
     protected int size;
