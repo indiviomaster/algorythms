@@ -1,4 +1,4 @@
-package ru.indivio;
+package ru.indivio.algorithms;
 
 import ru.indivio.algorithms.hashtable.DoubleHashTableImpl;
 import ru.indivio.algorithms.hashtable.HashTable;
